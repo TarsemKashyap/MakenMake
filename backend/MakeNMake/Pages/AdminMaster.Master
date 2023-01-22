@@ -1,0 +1,179 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="MakeNMake.Admin.AdminMaster" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript" src="../Static/js/validation.js"></script>
+    <link href="../Static/css/makenmake.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../Static/images/ico.ico" sizes="96x96" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+
+    <link rel="stylesheet" type="text/css" media="all" />
+    <link href="../Static/cssinner/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../Static/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Static/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="../Scripts/jquery-2.0.1.min.js"></script>
+    <script src="../Static/bootstrap/bootstrap.min.js"></script>
+    
+    
+
+    <style type="text/css">
+        .table > thead > tr > th {
+            text-align: center;
+        }
+
+        .table > tbody > tr > td {
+            text-align: left;
+        }
+
+        .navbar-toggle {
+            background-color: #99FF33;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .navbar-default .navbar-nav > li > a {
+            color: white;
+            margin-left: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#form1').keydown(function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    $('#form1').submit(); // Submit form code
+                }
+            });
+        });
+
+        $(function () {
+            $(document).bind('contextmenu', function (e) {
+                e.preventDefault();
+                alert('Right Click is not allowed');
+            });
+            $("[id*=treeModule] input[type=checkbox]").bind("click", function () {
+                var table = $(this).closest("table");
+                if (table.next().length > 0 && table.next()[0].tagName == "DIV") {
+                    //Is Parent CheckBox
+                    var childDiv = table.next();
+                    var isChecked = $(this).is(":checked");
+                    $("input[type=checkbox]", childDiv).each(function () {
+                        if (isChecked) {
+                            $(this).attr("checked", "checked");
+                        } else {
+                            $(this).removeAttr("checked");
+                        }
+                    });
+                } else {
+                    //Is Child CheckBox
+                    var parentDIV = $(this).closest("DIV");
+                    if ($("input[type=checkbox]", parentDIV).length == $("input[type=checkbox]:checked", parentDIV).length) {
+                        $("input[type=checkbox]", parentDIV.prev()).attr("checked", "checked");
+                    }
+                    //else {
+                    //    $("input[type=checkbox]", parentDIV.prev()).removeAttr("checked");
+                    //}
+                }
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <asp:ToolkitScriptManager ID="ToolkitScriptManager1" CombineScripts="true" ScriptMode="Release" runat="server" ></asp:ToolkitScriptManager>
+        <div class="container">
+            <div class="col-lg-12 top-class">
+                <div class="img-top" style="float: left;">
+                    <a href="DashBoard.aspx">
+                        <img src="../Static/images/logo-new.png" class="img-responsive" style="padding-left: 0px;" /></a>
+                </div>
+                <div class="right">
+                    <p style="padding-top: 66px;">
+                        <span id="loggedPerson" runat="server">Welcome Mohit Baweja </span>&nbsp; &nbsp;
+                        <asp:LinkButton ID="btnLogout" runat="server" ForeColor="Black" OnClick="btnLogout_Click">Logout</asp:LinkButton>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="container">
+            <div role="navigation" class="navbar navbar-default" style="background-color: #37A7E8; border-bottom: 5px solid #00b233;">
+
+                <div class="navbar-header">
+                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div id="navbarCollapse" class="collapse navbar-collapse">
+                    <div class="menu">
+                        <ul class="nav navbar-nav">
+                            <li class="active1"><a href="DashBoard.aspx">Dashboard</a></li>
+                            <li><a href="#">Users</a></li>
+                            <li><a href="#">Announcements</a></li>
+                            <li><a href="MakeNMakeSupport.aspx">Customer Care Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row" style="margin-left: 0px;">
+                <div class="col-lg-12" style="padding: 0px; margin: 0px;">
+                    <div class="col-lg-2 sidebar1">
+                       <%-- <asp:TreeView ID="treeModule" ClientIDMode="Static" runat="server" ImageSet="XPFileExplorer" NodeIndent="15" ShowLines="True" LineImagesFolder="~/TreeLineImages">
+
+                            <HoverNodeStyle Font-Underline="True" ForeColor="#A28800"></HoverNodeStyle>
+                            <NodeStyle HorizontalPadding="2px" NodeSpacing="0px" VerticalPadding="2px" Font-Names="Tahoma"
+                                Font-Size="8pt" ForeColor="#3C3C3C"></NodeStyle>
+                            <ParentNodeStyle Font-Bold="False"></ParentNodeStyle>
+                            <SelectedNodeStyle HorizontalPadding="0px" VerticalPadding="0px" BackColor="#A28800"
+                                Font-Underline="False"></SelectedNodeStyle>
+                        </asp:TreeView>--%>
+                        <asp:TreeView ID="treeModule" ClientIDMode="Static" ForeColor="black"  Font-Size="Small" runat="server" LineImagesFolder="~/TreeLineImages" ShowLines="false">
+                        </asp:TreeView>
+                        <div class="img" id="dvouterMessage" runat="server" style="padding:1px;margin-bottom:20px;">                            
+                                  <div id="dvMessages" runat="server" class="bg-info" style="padding: 10px;text-align:center;word-wrap: break-word;overflow: hidden;" visible="false">
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 sm3" style="padding-left: 0px; padding-right: 0px;">
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                            <ContentTemplate>
+                                <asp:UpdateProgress ID="UpdateProgress1" AssociatedUpdatePanelID="UpdatePanel1" DynamicLayout="true" runat="server">
+                                    <ProgressTemplate>
+                                        <div class="divWaiting">
+                                            <img src="../Static/images/wait.gif" />
+                                        </div>
+                                    </ProgressTemplate>
+                                </asp:UpdateProgress>
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

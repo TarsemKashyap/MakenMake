@@ -1,0 +1,138 @@
+/*
+http://www.freshdesignweb.com/beautiful-registration-form-with-html5-and-css3.html
+*/
+.logo{
+margin:0px auto;  /*background-color:#fff;width:520px;*/ background-image:url(../makenmakeNew/loginbg.png); background-repeat:no-repeat; background-position:center;}
+.form{
+	background-image:url(../makenmakeNew/regbg.png); background-position:center; background-repeat:no-repeat;
+	/*background:#EBEBEB; opacity:0.5; */
+	width:340px; margin:0 auto; padding-left:58px;  padding-bottom:35px;
+	-webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.75);
+    box-shadow:         0 0px 0px rgba(50, 50, 50, 0.75);
+}
+.img h1{font-family:'Lato', sans-serif; /*padding-top:40px;*/}
+.form fieldset{border:0px; padding:0px; margin:0px;}
+.form p.contact { font-size: 12px; margin:0px 0px 10px 0;line-height: 14px; font-family:'Lato', sans-serif;}
+
+.form input[type="text"] { width: 300px; background-color:#fff; text-align:center; border-radius: 5px; }
+.form input[type="email"] { width: 300px; background-color:#fff; text-align:center; border-radius: 5px;  }
+#email{ text-align:center;}
+.form input[type="password"] { width: 300px; background-color:#fff; text-align:center; border-radius: 5px;   }
+.form input.birthday{width:14%; background-color:#fff; border-radius: 5px;  }
+.form input.birthyear{width:27%; background-color:#fff; }
+.form label { color: #000; font-weight:bold;font-size: 12px; font-family:'Lato', sans-serif; }
+.form label.month {width: 135px; background-color:#fff; }
+.form input, textarea { background-color: rgba(255, 255, 255, 0.4); 
+                        border: 1px solid rgba(122, 192, 0, 0.15); 
+                        padding: 7px; font-family:'Lato', sans-serif;
+                         color: #4b4b4b; font-size: 14px; -webkit-border-radius: 5px;  margin-top: -10px; }
+.form input:focus, textarea:focus { border: 1px solid #ff5400; background-color: rgba(255, 255, 255, 1);  }
+.form .select-style {
+  -webkit-appearance: button; background-color:#fff; 
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 5px;
+  -webkit-user-select: none;
+  background-image: url(../makenmakeNew/select-arrow.png), 
+    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 0px solid #FFF;
+  color: #555;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;}
+  
+.form .gender {
+  width:300px; text-align:center; background-color:#fff; border-radius: 5px; 
+  }
+   .form .country {
+  width:300px; text-align:center;  background-color:#fff; border-radius: 5px; 
+  }
+  .form .services {
+  width:300px; text-align:center;  background-color:#fff; border-radius: 5px; 
+  }
+  .form textarea[type="text"] { width: 300px; text-align:center;  background-color:#fff; border-radius: 5px;  }
+  
+.form input.buttom{ background: #00B233; display: inline-block; padding: 5px 30px 6px; color: #fbf7f7; text-decoration: none; font-weight: bold; line-height: 1; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -moz-box-shadow: 0 1px 3px #999; -webkit-box-shadow: 0 1px 3px #999; box-shadow: 0 1px 3px #999; text-shadow: 0 -1px 1px #222; border: none; position: relative; cursor: pointer; font-size: 14px; font-family:'Lato', sans-serif;}
+.form input.buttom:hover	{ background-color: #2a78f6; }
+.demo{
+text-align:center;}
+.demo a{
+color:#FF0000;}
+.demo a:hover{
+color:#0000FF;}
+.demo2{
+text-align:center;}
+#txtfirstName {
+    background-image:url(../makenmakeNew/icons/1.png);
+    background-repeat: no-repeat; background-position:left;
+}
+#txtlastName {
+    background-image:url(../makenmakeNew/icons/1.png);
+    background-repeat: no-repeat; background-position:left;
+}
+#txtmobile{ background-image:url(../makenmakeNew/icons/4.png); background-repeat:no-repeat; background-position:left;}
+.icon{height:25px; background-image:url(../icons/7.png); background-repeat:no-repeat; background-position:left;}
+#txtloginid {
+    background-image:url(../makenmakeNew/icons/2.png);
+    background-repeat: no-repeat; background-position:left;
+}
+#txtsignupid {   background-image:url(../makenmakeNew/icons/2.png);
+    background-repeat: no-repeat; background-position:left;
+}
+.form input[type="password"] {
+    background-image:url(../makenmakeNew/icons/3.png);
+    background-repeat: no-repeat; background-position:left;
+}
+.form textarea[type="text"] {
+    background-image:url(../makenmakeNew/icons/7.png);
+    background-repeat: no-repeat; background-position:left;
+}
+#txtaddress, #ddlCountry,#ddlState,#ddlDistrict,#ddlCity{
+       background-image:url(../makenmakeNew/icons/7.png);
+    background-repeat: no-repeat; background-position:left;
+}
+.form .gender {
+    background-image:url(../makenmakeNew/icons/5.png);
+    background-repeat: no-repeat;
+	background-position:left;
+}
+ .form .country #txtaddress{
+    background-image:url(../makenmakeNew/icons/8.png);
+    background-repeat: no-repeat;
+	background-position:left;
+}
+
+@media  only screen and (min-width: 900px) {
+.image { position: fixed; right: 13%; top: 126px; }
+
+}
+
+.form .services {
+    background-image:url(../makenmakeNew/icons/10.png);
+    background-repeat: no-repeat;
+	background-position:left;
+	
+}
+#dom{ text-align:center;}
+.demo3{background-color:#FFFFFF; background-image:url(../makenmakeNew/icons/9.png); background-repeat:no-repeat; width:93%; border-radius:6px; background-position:center; background-position:left;}
+
+@media  only screen and (max-width: 768px) {
+	.demo3{ width:85%}
+	.img h1{font-family:'Lato', sans-serif; padding-top:20px;}
+}
+@media  only screen and (max-width: 360px) {
+	.demo3{ width:95%}
+	.img h1{font-family:'Lato', sans-serif; padding-top:4px;}
+}
+@media  only screen and (max-width: 320px) {
+	.demo3{ width:96%}
+}
+

@@ -1,0 +1,158 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+--%>
+
+<%-- HRMS Label Themes Definition -------------%>
+<asp:Label runat="server" />
+<asp:Label runat="server" CssClass="asterisk" SkinId="asterisk"/>
+<asp:Label runat="server" CssClass="alertbox" SkinId="alertbox"/>
+<asp:Label runat="server" CssClass="bold_text" SkinId="boldText"/>
+<asp:Label runat="server" CssClass="mandatory" SkinId="mandatory"/>
+<%-- HRMS DropDown Themes Definition -------------%>
+<asp:DropDownList CssClass="dropdownlist" runat="server"></asp:DropDownList>
+<%-- HRMS Textbox Themes Definition -------------%>
+<asp:TextBox runat="server" CssClass="textbox"/>
+<%-- HRMS Button Themes Definition -------------%>
+<asp:Button runat="server" CssClass="button"/>
+<%-- HRMS TreeView Themes Definition -------------%>
+<asp:TreeView CssClass="TreeView" runat="server" 
+    ImageSet="Arrows" 
+    NodeIndent="9" 
+    Font-Names="Trebuchet MS" 
+    ForeColor="white"
+    HoverNodeStyle-Font-Underline="false">
+   
+  <asp:NodeStyle CssClass="TreeView" />
+  <LevelStyles>    
+    <asp:TreeNodeStyle Font-Underline="False" />  
+    <asp:TreeNodeStyle CssClass="TreeViewLevel1" />    
+  </LevelStyles>
+
+</asp:TreeView>
+<%-- HRMS DataGrid Themes Definition -------------%>
+<asp:DataGrid BorderStyle="none" runat="server" AutoGenerateColumns="False" 
+ GridLines="Horizontal" ShowHeader="False"  BorderWidth="0" CellPadding="0" CellSpacing="0" Width="100%">
+ <AlternatingItemStyle CssClass="rowOdd" />
+ <ItemStyle CssClass="rowEven" />
+ <HeaderStyle CssClass="grid_header" />
+ <PagerStyle CssClass="pagination" />
+ </asp:DataGrid>
+ 
+ <asp:DataGrid skinId="oherthenadmin" BorderStyle="none" runat="server" AutoGenerateColumns="False" 
+ GridLines="Horizontal" ShowHeader="False"  BorderWidth="0" CellPadding="0" CellSpacing="0" Width="100%">
+ <AlternatingItemStyle CssClass="rowOdd" />
+ <ItemStyle CssClass="rowEven" />
+ <HeaderStyle CssClass="grid_header" />
+ <PagerStyle CssClass="pagination" />
+ </asp:DataGrid>
+ 
+ <asp:DataGrid runat="server" BorderStyle="none" SkinId="datagrid" BorderWidth="0" CellPadding="2" CellSpacing="0" 
+ AllowPaging="true" AutoGenerateColumns="False" Width="100%" > 
+  <AlternatingItemStyle CssClass="rowOdd" />
+ <ItemStyle CssClass="rowEven" />
+ <HeaderStyle CssClass="tab-hd" />
+ <PagerStyle CssClass="pagination" />
+ <PagerStyle Position="Bottom"/>
+  <HeaderStyle CssClass="grid_header" />
+   <ItemStyle Wrap="true" HorizontalAlign="Left"/>
+ </asp:DataGrid>
+ 
+
+ <asp:DataGrid runat="server" BorderStyle="none" SkinId="dashboardMyForm" BorderWidth="0" CellPadding="0" CellSpacing="1" 
+ AllowPaging="false" AutoGenerateColumns="False" Width="100%" >
+ <AlternatingItemStyle CssClass="rowOdd" />
+ <ItemStyle CssClass="rowEven" />
+ <HeaderStyle CssClass="grid_header" />
+ <ItemStyle Wrap="true" HorizontalAlign="Left"/>
+ </asp:DataGrid>
+ 
+ <%--HRMS GridView Themes Definition--%>
+ <asp:GridView runat="server" AutoGenerateColumns="False" AllowPaging="True" CssClass="dGrid"
+ HeaderStyle-CssClass="grid_header" RowStyle-CssClass="rowEven" AlternatingRowStyle-CssClass="rowOdd"
+            PagerStyle-CssClass="pagination" BorderWidth="0" BorderStyle="none" HorizontalAlign="Center"
+            CellPadding="5" CellSpacing="0" Width="100%">           
+           <RowStyle CssClass="rowEven" />
+           <PagerStyle CssClass="pagination" />
+           <HeaderStyle CssClass="grid_header" />
+           <AlternatingRowStyle CssClass="rowOdd" />
+  </asp:GridView>
+  
+  <asp:GridView runat="server" SkinId="withoutpaging" AutoGenerateColumns="False" AllowPaging="False"
+            HeaderStyle-CssClass="grid_header" BorderWidth="0" BorderStyle="none" HorizontalAlign="Center"
+            CellPadding="5" CellSpacing="0" Width="100%" >
+           <PagerSettings Position="bottom" Mode="NextPreviousFirstLast" />
+           <RowStyle CssClass="rowEven" />
+           <PagerStyle CssClass="pagination" />
+           <HeaderStyle CssClass="grid_header" />
+           <AlternatingRowStyle CssClass="rowOdd" />
+  </asp:GridView>
+  
+  <asp:GridView runat="server" SkinID="assignRoleParent"
+  AllowPaging="false" AllowSorting="false" CellPadding="0" CellSpacing="0"
+  AutoGenerateColumns="false" BorderStyle="Solid" BorderWidth="0" 
+  GridLines="None" Width="100%">
+  </asp:GridView>
+  
+  <asp:GridView runat="server" SkinID="assignRoleChild"
+  AllowPaging="false" AllowSorting="false"
+  AutoGenerateColumns="false" BorderColor="#CDE0F5" BorderStyle="none" BorderWidth="1"
+  CellPadding="3" CellSpacing="0" GridLines="None" ShowFooter="false" ShowHeader="false"
+  Visible="True" Width="100%">
+   </asp:GridView>
+   
+<%--End GridView Style--%>
+ 
+ <%-- HRMS Image Themes Definition -------------%>
+ <asp:Image SkinID="login" ImageUrl="Images/login_here.gif" runat="server"/>
+ <asp:Image SkinID="imgHead" ImageUrl="Images/masthead.jpg" runat="server"/>
+ <asp:Image SkinID="arrowBullet" ImageUrl="Images/arrow_bullet.gif" runat="server"/>
+ <asp:Image SkinID="Clear" ImageUrl="Images/Clear.gif" runat="server"/>
+ <asp:ImageButton SkinID="ClearButton" ImageUrl="Images/Clear.gif" runat="server"/>
+ <asp:Image SkinID="Search" ImageUrl="Images/Search.jpg" runat="server"/>
+ <asp:Image SkinID="expand" ImageUrl="Images/expand.gif" runat="server"/>
+ <asp:Image SkinID="collapse" ImageUrl="Images/collapse.jpg" runat="server"/>
+ <asp:Image SkinID="calendar" ImageUrl="Images/cal.gif" runat="server"/>
+ <asp:Image SkinID="space" ImageUrl="Images/spacer.gif" runat="server"/>
+ <asp:Image SkinID="greenBall" ImageUrl="Images/ball_green.gif" runat="server"/>
+ <asp:Image SkinID="logoDashBoard" ImageUrl="Images/dashboardlogo.jpg" runat="server"/>
+ <asp:Image SkinID="imgDownArrow" ImageUrl="Images/arrow_down_rht_menu.gif" runat="server"/>
+ <asp:Image SkinID="sCut" ImageUrl="Images/Cut.gif" runat="server"/>
+ <asp:Image SkinID="sCopy" ImageUrl="Images/Copy.gif" runat="server"/>
+<asp:Image SkinID="sPaste" ImageUrl="Images/Paste.gif" runat="server"/>
+<asp:Image SkinID="sSeparator" ImageUrl="Images/separator.gif" runat="server"/>
+<asp:Image SkinID="sBold" ImageUrl="Images/Bold.gif" runat="server"/>
+<asp:Image SkinID="sItalic" ImageUrl="Images/Italic.gif" runat="server"/>
+<asp:Image SkinID="sUnderline" ImageUrl="Images/underline.gif" runat="server"/>
+<asp:Image SkinID="sLeftjustify" ImageUrl="Images/leftjustify.gif" runat="server"/>
+<asp:Image SkinID="sCenterjustify" ImageUrl="Images/centerjustify.gif" runat="server"/>
+<asp:Image SkinID="sRightjustify" ImageUrl="Images/rightjustify.gif" runat="server"/>
+<asp:Image SkinID="sjustify" ImageUrl="Images/justify.gif" runat="server"/>
+<asp:Image SkinID="sUnorderedlist" ImageUrl="Images/unorderedlist.gif" runat="server"/>
+<asp:Image SkinID="sOrderedlist" ImageUrl="Images/orderedlist.gif" runat="server"/>
+<asp:Image SkinID="sOutdent" ImageUrl="Images/outdent.gif" runat="server"/>
+<asp:Image SkinID="sIndent" ImageUrl="Images/indent.gif" runat="server"/>
+<asp:Image SkinID="sStrikethrough" ImageUrl="Images/strikethrough.gif" runat="server"/>
+<asp:Image SkinID="sSubscript" ImageUrl="Images/subscript.gif" runat="server"/>
+<asp:Image SkinID="sSuperscript" ImageUrl="Images/superscript.gif" runat="server"/>
+<asp:Image SkinID="sSave" ImageUrl="Images/save.gif" runat="server"/>
+

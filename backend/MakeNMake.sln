@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeNMake.Website", "MakeNMake\MakeNMake.Website.csproj", "{602559FE-DDB9-46FD-A8A0-5D03BA20AD3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeNMake.BL", "MakeNMakeBL\MakeNMake.BL.csproj", "{0AB01C85-6E91-4306-9E04-749CC3B87B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeNMake.DL", "MakeNMake.DL\MakeNMake.DL.csproj", "{042C3503-9376-4EA6-BD5B-689B79511BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MakeNMake.Utilities", "MakeNMake.Utilities\MakeNMake.Utilities.csproj", "{E83DE793-9570-4333-8576-30C9EB9016A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "makenMakeApi", "makenMakeApi\makenMakeApi.csproj", "{17BAC249-EE5C-4D4B-90DC-848A3E2F3552}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{602559FE-DDB9-46FD-A8A0-5D03BA20AD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602559FE-DDB9-46FD-A8A0-5D03BA20AD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602559FE-DDB9-46FD-A8A0-5D03BA20AD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602559FE-DDB9-46FD-A8A0-5D03BA20AD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB01C85-6E91-4306-9E04-749CC3B87B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB01C85-6E91-4306-9E04-749CC3B87B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB01C85-6E91-4306-9E04-749CC3B87B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB01C85-6E91-4306-9E04-749CC3B87B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{042C3503-9376-4EA6-BD5B-689B79511BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{042C3503-9376-4EA6-BD5B-689B79511BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{042C3503-9376-4EA6-BD5B-689B79511BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{042C3503-9376-4EA6-BD5B-689B79511BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83DE793-9570-4333-8576-30C9EB9016A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83DE793-9570-4333-8576-30C9EB9016A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83DE793-9570-4333-8576-30C9EB9016A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83DE793-9570-4333-8576-30C9EB9016A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17BAC249-EE5C-4D4B-90DC-848A3E2F3552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17BAC249-EE5C-4D4B-90DC-848A3E2F3552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17BAC249-EE5C-4D4B-90DC-848A3E2F3552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17BAC249-EE5C-4D4B-90DC-848A3E2F3552}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://epharmawiredsoft.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MakeNMake.DL\\MakeNMake.DL.csproj
+		SccProjectName1 = MakeNMake.DL
+		SccLocalPath1 = MakeNMake.DL
+		SccProjectUniqueName2 = MakeNMake.Utilities\\MakeNMake.Utilities.csproj
+		SccProjectName2 = MakeNMake.Utilities
+		SccLocalPath2 = MakeNMake.Utilities
+		SccProjectUniqueName3 = MakeNMake\\MakeNMake.Website.csproj
+		SccProjectName3 = MakeNMake
+		SccLocalPath3 = MakeNMake
+		SccProjectUniqueName4 = makenMakeApi\\makenMakeApi.csproj
+		SccProjectName4 = makenMakeApi
+		SccLocalPath4 = makenMakeApi
+		SccProjectUniqueName5 = MakeNMakeBL\\MakeNMake.BL.csproj
+		SccProjectName5 = MakeNMakeBL
+		SccLocalPath5 = MakeNMakeBL
+	EndGlobalSection
+EndGlobal

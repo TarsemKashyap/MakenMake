@@ -1,0 +1,10 @@
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMakeBL.dll.config
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMakeBL.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMakeBL.pdb
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMake.DL.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMake.Utilities.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMake.DL.pdb
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\bin\Release\MakeNMake.Utilities.pdb
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\obj\Release\MakeNMake.BL.csprojResolveAssemblyReference.cache
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\obj\Release\MakeNMakeBL.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMakeBL\obj\Release\MakeNMakeBL.pdb

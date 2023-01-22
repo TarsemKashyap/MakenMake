@@ -1,0 +1,6 @@
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\bin\Release\MakeNMake.Utilities.dll.config
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\bin\Release\MakeNMake.Utilities.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\bin\Release\MakeNMake.Utilities.pdb
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\obj\Release\MakeNMake.Utilities.csprojResolveAssemblyReference.cache
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\obj\Release\MakeNMake.Utilities.dll
+C:\Users\nidhi\Source\Workspaces\MakenMake\MakeNMake.Utilities\obj\Release\MakeNMake.Utilities.pdb

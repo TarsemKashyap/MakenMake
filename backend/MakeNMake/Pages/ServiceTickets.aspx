@@ -1,0 +1,142 @@
+﻿<%@ Page Title="Service Tickets" Language="C#" MasterPageFile="AdminMaster.Master" AutoEventWireup="true" CodeBehind="ServiceTickets.aspx.cs" Inherits="MakeNMake.Admin.ServiceTickets" %>
+<%@ Register Src="~/UserControl/UserInfo.ascx" TagPrefix="uc1" TagName="UserInfo" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+ <script src="../Scripts/jquery-2.0.1.min.js"></script>
+    <link href="../Static/bootstrap/bootstrap.css" rel="stylesheet" />
+    <script src="../Static/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($("#hdnCustomer").val() == "1") {
+                $('#myModal').modal({ show: true });
+                $("#hdnCustomer").val("");
+
+                $(".modal-backdrop").hide();
+            }
+        });
+        function PageReload() {
+            var getValue = confirm('No Record Found ');
+            if (getValue) {
+                window.location.href = window.location.href;
+            }
+            else {
+                window.location.href = window.location.href;
+            }
+        }
+
+        function ShowMsg(ele) {
+            alert(ele.nextElementSibling.value);
+            return false;
+        }
+    </script> 
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div class="panel panel-success table-responsive">
+        <div class="panel-heading">
+            <h3 class="panel-title paneltitle">Tickets Status</h3>
+        </div>
+        <div class="panel-body">
+          
+             <div class="input-group input-group-xs">
+
+                <asp:TextBox ID="txtSearchclient" placeholder="Search By Client Name,Engineer Name,Ticket Id or Ticket Type" Width="500px"
+                    CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:Button ID="Button1" runat="server" Text="Search" Style="margin-left: 10px;"
+                    CssClass="btn btn-success" OnClick="Button1_Click"  />
+                   <asp:Button ID="btngenerrateReport" runat="server" Text="GenerateReport" Style="margin-left: 10px;"
+                    CssClass="btn btn-success" OnClick="btngenerrateReport_Click"  />
+            </div>
+            <br />
+
+             <div class="panel-heading table-responsive" id="divTicketstatus" runat="server" style="padding-left: 0px;">
+                 <asp:HiddenField ID="hdnCustomer" ClientIDMode="Static" runat="server" />
+                <asp:Label ID="lblMsg" CssClass="label label-success" runat="server"></asp:Label>
+                <asp:Repeater ID="RptTickets" runat="server" OnItemCommand="RptTickets_ItemCommand" OnItemDataBound="RptTickets_ItemDataBound" >
+                    <HeaderTemplate>
+                        <table class="table table-hover  table-bordered  table-condensed" data-height="400">
+                            <thead style="color: White; background-color: #6b9297;">
+                                <tr>
+                                      <th>Ticket Id</th>
+                                    <th>Ticket Type</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Type</th>
+                                    <th>Assigned To</th>                                   
+                                    <th>Created</th>
+                                    <th>Status</th>
+                                   <th>Reason</th>
+                                </tr>
+                            </thead>
+                    </HeaderTemplate>
+                    <ItemTemplate>
+                        <tbody>
+                            <tr><td>
+                                    <asp:Label ID="Label1" runat="server" Text='<%#Eval("TicketID") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Label ID="lblTicketType" runat="server" Text='<%#Eval("TicketType") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="lnkBtnClient" Text='<%#Eval("Name") %>' ToolTip="Click to view Info"
+                                        CommandName="Customer" CommandArgument='<%#Eval("CustomerId") %>' runat="server"></asp:LinkButton></td>
+                                <td>
+                                    <asp:Label ID="lblType" runat="server" Text='<%#Eval("UserType") %>'></asp:Label></td>
+                                <td>
+                                    <asp:Label ID="LablblEngineer" runat="server" Text='<%#Eval("AssignedTo") %>'></asp:Label></td>
+                               
+                                <td>
+                                    <asp:Label ID="lblCreated" runat="server" Text='<%#Convert.ToDateTime(Eval("created")).ToString("dd/MM/yyyy")%>'></asp:Label></td>
+                                <td>
+                                    <asp:Label ID="lblStatus" runat="server" Text='<%# Eval("Status")%>'></asp:Label></td>
+                                <td>
+                                    <asp:Label ID="Label2" runat="server" Text='<%# Convert.ToString(Eval("Reason"))==""?"No Reason Mentioned":Eval("Reason")%>'></asp:Label>                                 
+                                <asp:LinkButton ID="lnkBtnMore" ClientIDMode="Static" runat="server">....read more</asp:LinkButton>
+                                 <asp:HiddenField ID="hdnFullMsg" ClientIDMode="Static" runat="server" Value='<%#Convert.ToString(Eval("Reason"))==""?"No Reason Mentioned":Eval("Reason")%>' />
+                                    </td>
+                            </tr>
+                        </tbody>
+                    </ItemTemplate>
+                    <FooterTemplate>
+                        </table>
+                    </FooterTemplate>
+                </asp:Repeater>
+                <table class="tblpaging" id="tblpaging" runat="server" style="font-size: 12px;clear:both;margin-top:15px;">
+                    <tr>
+                        <td colspan="5"></td>
+                    </tr>
+                    <tr>
+                        <td width="32" valign="top" align="center">
+                            <asp:LinkButton ID="lnkFirst" runat="server" OnClick="lnkFirst_Click">First</asp:LinkButton>
+                        </td>
+                        <td width="80" valign="top" align="center">
+                            <asp:LinkButton ID="lnkPrevious" runat="server" OnClick="lnkPrevious_Click">Previous</asp:LinkButton>
+                        </td>
+                        <td>
+                            <asp:DataList ID="RepeaterPaging" runat="server" RepeatDirection="Horizontal" OnItemCommand="RepeaterPaging_ItemCommand"
+                                OnItemDataBound="RepeaterPaging_ItemDataBound">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="Pagingbtn" runat="server" CommandArgument='<%# Eval("PageIndex") %>'
+                                        CommandName="newpage" Text='<%# Eval("PageText") %> ' Width="20px"></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </td>
+                        <td width="80" valign="top" align="center">
+                            <asp:LinkButton ID="lnkNext" runat="server" OnClick="lnkNext_Click">Next</asp:LinkButton>
+                        </td>
+                        <td width="80" valign="top" align="center">
+                            <asp:LinkButton ID="lnkLast" runat="server" OnClick="lnkLast_Click">Last</asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left" height="30">
+                            <asp:Label Style="padding-left: 4px;" ID="lblpage" runat="server" Text=""></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+            <div class="col-sm-12">
+                <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
+            </div>
+    </div></div>
+    <div class="modal fade"  id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <uc1:UserInfo runat="server" ID="UserInfo" />
+    </div>
+</asp:Content>
